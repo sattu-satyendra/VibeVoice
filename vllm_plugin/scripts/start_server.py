@@ -96,7 +96,7 @@ def start_vllm_server(model_path: str, port: int) -> None:
         "--no-enable-prefix-caching",
         "--enable-chunked-prefill",
         "--chat-template-content-format", "openai",
-        "--tensor-parallel-size", "1",
+        "--tensor-parallel-size", "2",
         "--allowed-local-media-path", "/app",
         "--port", str(port),
     ]
