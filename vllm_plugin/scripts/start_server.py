@@ -88,7 +88,7 @@ def start_vllm_server(model_path: str, port: int) -> None:
         "--served-model-name", "vibevoice",
         "--trust-remote-code",
         "--dtype", "bfloat16",
-        "--max-num-seqs", "64",
+        "--max-num-seqs", "4",
         "--max-model-len", "65536",
         # "--max-num-batched-tokens", "32768",
         "--gpu-memory-utilization", "0.8",
