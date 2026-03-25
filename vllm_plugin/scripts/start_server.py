@@ -88,7 +88,7 @@ def start_vllm_server(model_path: str, port: int) -> None:
         "--served-model-name", "vibevoice",
         "--trust-remote-code",
         "--dtype", "bfloat16",
-        "--max-num-seqs", "64",              # was 64 — way too high for ASR
+        "--max-num-seqs", "32",              # was 64 — way too high for ASR
         "--max-model-len", "16384",         # keep — good for dealership calls
         "--max-num-batched-tokens", "16384", # uncomment and set to match
         "--gpu-memory-utilization", "0.90",  # was 0.78 — more room for KV cache
