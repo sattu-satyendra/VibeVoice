@@ -88,10 +88,10 @@ def start_vllm_server(model_path: str, port: int) -> None:
         "--served-model-name", "vibevoice",
         "--trust-remote-code",
         "--dtype", "bfloat16",
-        "--max-num-seqs", "10",              # was 64 — way too high for ASR
+        "--max-num-seqs", "8",              # was 64 — way too high for ASR
         "--max-model-len", "16384",         # keep — good for dealership calls
         "--max-num-batched-tokens", "16384", # uncomment and set to match
-        "--gpu-memory-utilization", "0.90",  # was 0.78 — more room for KV cache
+        "--gpu-memory-utilization", "0.8",  # was 0.78 — more room for KV cache
         # "--enforce-eager",                 # remove — let CUDA graphs work
         "--no-enable-prefix-caching",        # keep — no prefix sharing in ASR
         "--enable-chunked-prefill",          # keep — good for long audio
